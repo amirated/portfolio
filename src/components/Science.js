@@ -28,7 +28,7 @@ class Science extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/v1/music")
+    fetch("http://localhost:3000/api/v1/science")
       .then(res => res.json())
       .then(
         (result) => {
@@ -56,13 +56,13 @@ class Science extends React.Component {
         <div className="container page">
           <div className="row">
             <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Music</h1>
+              <h1 className="text-xs-center">Science</h1>
               <p className="text-xs-center">
-                  Music connects..
+                  No plastic please..
               </p>
             </div>
           </div>
-          <PageBodyList page_name="music" items={this.state.items}/>
+          <PageBodyList page_name="science" items={this.state.items}/>
         </div>
       </div>
     );

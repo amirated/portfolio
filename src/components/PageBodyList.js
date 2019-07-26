@@ -3,6 +3,7 @@ import agent from '../agent';
 import { connect } from 'react-redux';
 import { CHANGE_TAB } from '../constants/actionTypes';
 import { Card, Icon, Avatar } from 'antd';
+import VideoEmbed from './VideoEmbed';
 const { Meta } = Card;
 
 function showList(items) {
@@ -25,7 +26,7 @@ function showList(items) {
         style={{ margin: '0 30% 20px 30%' }}
         cover={(item.entry_key && (
             <img src={img_src}/>
-          )) || (item.yt_link && (<iframe ng-src={yt_link} width="500" height="250" frameBorder="0" allowFullScreen></iframe>))}
+          )) || (item.yt_link && (<VideoEmbed yt_link={item.yt_link} />))}
         actions={(item.entry_key && [<a href={insta_link} target="_blank">Find on Instagram</a>]) || (item.yt_link && [<Icon type="spotify" />, <Icon type="itunes" />, <Icon type="ellipsis" />])}
       >
         <Meta
