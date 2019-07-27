@@ -64,28 +64,19 @@ class Art extends React.Component {
   }
 
   render() {
-    // const email = this.props.email;
-    // const password = this.props.password;
-    // return (
-    //   <div className="auth-page">
-    //     <div className="container page">
-    //       <div className="row">
-    //         <div className="col-md-6 offset-md-3 col-xs-12">
-    //           <h1 className="text-xs-center">Art</h1>
-    //           <p className="text-xs-center">
-    //               Art lives forever..
-    //               {this.props.data}
-    //           </p>
-    //         </div>
-    //       </div>
-    //       <PageBodyList page_name="art" items={this.state.items} />
-    //     </div>
-    //   </div>
-    // );
-
     return (
-      <PageBodyList page_name="art" items={this.state.items}/>
-      );
+      <div className="container page" style={{ marginTop: "5rem"}}>
+        <div className="row">
+          <div className="col-md-6 offset-md-3 col-xs-12">
+            <h1 className="text-xs-center">Art</h1>
+            <p className="text-xs-center">
+                If you understand this.. you are really paying attention!
+            </p>
+          </div>
+        </div>
+        <PageBodyList page_name="art" items={this.state.items}/>
+      </div>
+    );
   }
 }
 

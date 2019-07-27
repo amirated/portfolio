@@ -52,18 +52,16 @@ class Science extends React.Component {
 
   render() {
     return (
-      <div className="auth-page">
-        <div className="container page">
-          <div className="row">
-            <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Science</h1>
+      <div className="container page" style={{ marginTop: "5rem"}}>
+        <div className="row">
+          <div className="col-md-6 offset-md-3 col-xs-12">
+            <h1 className="text-xs-center">Science</h1>
               <p className="text-xs-center">
-                  No plastic please..
+                  No plastic please.. 
               </p>
-            </div>
           </div>
-          <PageBodyList page_name="science" items={this.state.items}/>
         </div>
+        <PageBodyList page_name="science" items={this.state.items}/>
       </div>
     );
   }
