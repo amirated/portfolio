@@ -30,7 +30,8 @@ function showList(items) {
         actions={(item.entry_key && [<a href={insta_link} target="_blank">Find on Instagram</a>]) || (item.yt_link && [<Icon type="spotify" />, <Icon type="itunes" />, <Icon type="ellipsis" />])}
       >
         <Meta
-          avatar={<Avatar src={img_src} />}
+          avatar={(item.demo_app_mac && (<a href={item.demo_app_mac} download>Download App</a>))
+           || (!item.demo_app_mac && <Avatar src={img_src} />)}
           title={item.title}
           description={item.body}
         />

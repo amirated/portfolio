@@ -63,18 +63,16 @@ class Music extends React.Component {
     // const email = this.props.email;
     // const password = this.props.password;
     return (
-      <div className="auth-page">
-        <div className="container page">
-          <div className="row">
-            <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Music</h1>
+      <div className="container page" style={{ marginTop: "5rem"}}>
+        <div className="row">
+          <div className="col-md-6 offset-md-3 col-xs-12">
+            <h1 className="text-xs-center">Music</h1>
               <p className="text-xs-center">
                   Music connects..
               </p>
-            </div>
           </div>
-          <PageBodyList page_name="music" items={this.state.items}/>
         </div>
+        <PageBodyList page_name="music" items={this.state.items}/>
       </div>
     );
   }
