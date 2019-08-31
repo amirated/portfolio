@@ -8,6 +8,7 @@ import Home from '../components/Home';
 import Art from '../components/Art';
 import Music from '../components/Music';
 import Science from '../components/Science';
+import Contact from '../components/Contact';
 import { store } from '../store';
 import { push } from 'react-router-redux';
 import 'antd/dist/antd.css';
@@ -57,6 +58,7 @@ class App extends React.Component {
             <Route path="/art" component={Art} />
             <Route path="/music" component={Music} />
             <Route path="/science" component={Science} />
+            <Route path="/contact" component={Contact} />
             </Switch>
         </div>
       );
