@@ -35,4 +35,4 @@ If you want to change the API URL to a local server, simply edit `src/agent.js` 
 
 <br />
 
-[![Also check](https://sptfy.com/germination)](https://instagram.com/_amitesh_)
+[Also check](https://sptfy.com/germination)(https://instagram.com/_amitesh_)
