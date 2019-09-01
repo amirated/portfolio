@@ -12,6 +12,7 @@ import Contact from '../components/Contact';
 import { store } from '../store';
 import { push } from 'react-router-redux';
 import 'antd/dist/antd.css';
+import '../styles/main.scss';
 
 const mapStateToProps = state => {
   return {
