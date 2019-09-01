@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HeaderItems = props => {
   return (
-    <ul className="nav navbar-nav pull-xs-right" >
+    <ul className="nav-list" >
 
       <li className="nav-item">
         <Link to="/art" className="nav-link">
@@ -39,7 +39,9 @@ class Header extends React.Component {
           </Link>
 
           <HeaderItems />
-          <button onClick={this.props.toggleTheme} />
+          <div className="theme-toggle">
+            <button onClick={this.props.toggleTheme} />
+          </div>
         </div>
       </nav>
     );

@@ -27,12 +27,45 @@ body {
 	width: 100%;
 	height: 55px;
 	z-index: 1;
-	/*@include theme-colors($light-theme: true);
-	.dark & {
-		@include theme-colors($light-theme: false);
-	}*/
+	
+	background: #345678;
+	.container {
+		display: flex;
+		justify-content: space-around;
+		flex-flow: row wrap;
+		height: 100%;
+		/*@include theme-colors($light-theme: true);
+		.dark & {
+			@include theme-colors($light-theme: false);
+		}*/
+		.navbar-brand {
+			color: #fff;
+			display: grid;
+			align-content: center;
+		}
+		.nav-list {
+			justify-content: flex-end;
+			display: flex;
+			width: 50%;
+			list-style: none;
+			.nav-item {
+				margin: 0 10px;
+				display: grid;
+    			align-content: center;
+				.nav-link {
+
+				}
+			}
+		}
+		.theme-toggle {
+			display: grid;
+			align-content: center;
+		}
+	}
 }
 
-.navbar-brand {
-	color: #fff;
+
+
+.page-container {
+	text-align: center;
 }

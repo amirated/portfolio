@@ -65,11 +65,11 @@ class Art extends React.Component {
 
   render() {
     return (
-      <div className="container page" style={{ marginTop: "5rem"}}>
-        <div className="row">
-          <div className="col-md-6 offset-md-3 col-xs-12">
-            <h1 className="text-xs-center">Art</h1>
-            <p className="text-xs-center">
+      <div className="page-container" style={{ marginTop: "5rem"}}>
+        <div className="">
+          <div className="">
+            <h1 className="">Art</h1>
+            <p className="">
                 If you understand this.. you are really paying attention!
             </p>
           </div>

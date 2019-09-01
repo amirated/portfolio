@@ -52,7 +52,7 @@ class Science extends React.Component {
 
   render() {
     return (
-      <div className="container page" style={{ marginTop: "5rem"}}>
+      <div className="page-container" style={{ marginTop: "5rem"}}>
         <div className="row">
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Science</h1>
