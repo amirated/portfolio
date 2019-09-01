@@ -1,3 +1,38 @@
+$light-background: #f2ece4;
+$light-text: #003366;
+$dark-background: #6b717f;
+$dark-text: #d2e1dd;
+
+@mixin theme-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: $light-background;
+    color: $light-text;
+  } @else {
+    background-color: $dark-background;
+    color: $dark-text;
+  }
+}
+
 body {
-	background: aqua;
+  @include theme-colors($light-theme: true);
+  &.dark {
+    @include theme-colors($light-theme: false);
+  }
+}
+
+
+.navbar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 55px;
+	z-index: 1;
+	/*@include theme-colors($light-theme: true);
+	.dark & {
+		@include theme-colors($light-theme: false);
+	}*/
+}
+
+.navbar-brand {
+	color: #fff;
 }

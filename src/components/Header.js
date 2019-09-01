@@ -28,16 +28,10 @@ const HeaderItems = props => {
 };
 
 class Header extends React.Component {
+
   render() {
     return (
-      <nav className="navbar navbar-light" style={{
-        position: "fixed",
-        top: "0",
-        width: "100%",
-        height: "55px",
-        background: "#f1f1f1",
-        zIndex: "1"
-      }}>
+      <nav className="navbar">
         <div className="container">
 
           <Link to="/" className="navbar-brand">
@@ -45,6 +39,7 @@ class Header extends React.Component {
           </Link>
 
           <HeaderItems />
+          <button onClick={this.props.toggleTheme} />
         </div>
       </nav>
     );
