@@ -32,7 +32,7 @@ class Home extends React.Component {
     const tab = this.props.token ? 'feed' : 'all';
     
 
-    this.props.onLoad(tab, Promise.all([agent.Tags.getAll()]));
+    // this.props.onLoad(tab, Promise.all([agent.Tags.getAll()]));
   }
 
   componentWillUnmount() {
@@ -41,10 +41,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="home-page"  style={{
-          position: "relative",
-          top: "60px"
-          }}>
+      <div className="page-container">
         <Banner token={this.props.token} appName={this.props.appName} />
       </div>
     );

@@ -11,7 +11,8 @@ import {
   ART,
   ART_PAGE_UNLOADED
 } from '../constants/actionTypes';
-
+const rails_url = "http://localhost:3000/api/v1/arts";
+const node_url = "http://localhost:3000/art"
 const mapStateToProps = state => ({ ...state.auth });
 
 const mapDispatchToProps = dispatch => ({
@@ -36,7 +37,16 @@ class Art extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/v1/arts")
+    this.getData();
+  }
+
+  componentWillUnmount() {
+    this.props.onUnload();
+  }
+
+  getData() {
+    fetch(node_url)
+    // fetch(rails_url)
       .then(res => res.json())
       .then(
         (result) => {
@@ -59,17 +69,13 @@ class Art extends React.Component {
       )
   }
 
-  componentWillUnmount() {
-    this.props.onUnload();
-  }
-
   render() {
     return (
-      <div className="container page" style={{ marginTop: "5rem"}}>
-        <div className="row">
-          <div className="col-md-6 offset-md-3 col-xs-12">
-            <h1 className="text-xs-center">Art</h1>
-            <p className="text-xs-center">
+      <div className="page-container" style={{ marginTop: "5rem"}}>
+        <div className="">
+          <div className="">
+            <h1 className="">Art</h1>
+            <p className="">
                 If you understand this.. you are really paying attention!
             </p>
           </div>

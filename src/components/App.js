@@ -18,7 +18,7 @@ const mapStateToProps = state => {
   return {
     appLoaded: state.common.appLoaded,
     appName: state.common.appName,
-    currentUser: state.common.currentUser,
+    // currentUser: state.common.currentUser,
     redirectTo: state.common.redirectTo
   }};
 
@@ -30,6 +30,16 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      theme: 'light'
+    };
+    console.log(this.state)
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.redirectTo) {
       // this.context.router.replace(nextProps.redirectTo);
@@ -47,13 +57,29 @@ class App extends React.Component {
     this.props.onLoad(token ? agent.Auth.current() : null, token);
   }
 
+  toggleTheme() {
+    if (this.state.theme === 'light') {
+      this.setState({
+        theme: 'dark'
+      });
+      document.body.classList.add('dark');
+    } else {
+      this.setState({
+        theme: 'light'
+      });
+      document.body.classList.remove('dark');
+    }
+    
+  }
+
   render() {
     if (this.props.appLoaded) {
       return (
         <div>
           <Header
             appName={this.props.appName}
-            currentUser={this.props.currentUser} />
+            currentUser={this.props.currentUser} 
+            toggleTheme={this.toggleTheme.bind(this)} />
             <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/art" component={Art} />
@@ -68,7 +94,8 @@ class App extends React.Component {
       <div>
         <Header
           appName={this.props.appName}
-          currentUser={this.props.currentUser} />
+          currentUser={this.props.currentUser} 
+          />
       </div>
     );
   }
