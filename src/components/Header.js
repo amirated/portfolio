@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import ThemeButton from './ThemeButton';
+
 const HeaderItems = props => {
   return (
     <ul className="nav-list" >
@@ -41,6 +43,7 @@ class Header extends React.Component {
           <HeaderItems />
           <div className="theme-toggle">
             <button onClick={this.props.toggleTheme} />
+            <ThemeButton />
           </div>
         </div>
       </nav>

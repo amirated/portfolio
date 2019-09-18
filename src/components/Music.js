@@ -9,6 +9,8 @@ import {
   MUSIC,
   MUSIC_PAGE_UNLOADED
 } from '../constants/actionTypes';
+const rails_url = "http://localhost:3000/api/v1/music";
+const node_url = "http://localhost:3000/music";
 
 const mapStateToProps = state => ({ ...state.auth });
 
@@ -34,7 +36,16 @@ class Music extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/v1/music")
+    this.fetchData();
+  }
+
+  componentWillUnmount() {
+    this.props.onUnload();
+  }
+
+  fetchData() {
+    // fetch(rails_url)
+    fetch(node_url)
       .then(res => res.json())
       .then(
         (result) => {
@@ -53,10 +64,6 @@ class Music extends React.Component {
           });
         }
       )
-  }
-
-  componentWillUnmount() {
-    this.props.onUnload();
   }
 
   render() {

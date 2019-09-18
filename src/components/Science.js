@@ -10,6 +10,9 @@ import {
   SCIENCE_PAGE_UNLOADED
 } from '../constants/actionTypes';
 
+const rails_url = "http://localhost:3000/api/v1/science";
+const node_url = "http://localhost:3000/science";
+
 const mapStateToProps = state => ({ ...state.auth });
 
 const mapDispatchToProps = dispatch => ({
@@ -28,7 +31,16 @@ class Science extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/v1/science")
+    this.fetchData();
+  }
+
+  componentWillUnmount() {
+    this.props.onUnload();
+  }
+
+  fetchData() {
+    // fetch(rails_url)
+    fetch(node_url)
       .then(res => res.json())
       .then(
         (result) => {
@@ -44,10 +56,6 @@ class Science extends React.Component {
           });
         }
       )
-  }
-
-  componentWillUnmount() {
-    this.props.onUnload();
   }
 
   render() {

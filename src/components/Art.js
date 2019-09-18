@@ -11,7 +11,8 @@ import {
   ART,
   ART_PAGE_UNLOADED
 } from '../constants/actionTypes';
-
+const rails_url = "http://localhost:3000/api/v1/arts";
+const node_url = "http://localhost:3000/art"
 const mapStateToProps = state => ({ ...state.auth });
 
 const mapDispatchToProps = dispatch => ({
@@ -36,7 +37,16 @@ class Art extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/v1/arts")
+    this.getData();
+  }
+
+  componentWillUnmount() {
+    this.props.onUnload();
+  }
+
+  getData() {
+    fetch(node_url)
+    // fetch(rails_url)
       .then(res => res.json())
       .then(
         (result) => {
@@ -57,10 +67,6 @@ class Art extends React.Component {
           });
         }
       )
-  }
-
-  componentWillUnmount() {
-    this.props.onUnload();
   }
 
   render() {

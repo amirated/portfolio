@@ -7,6 +7,7 @@ import VideoEmbed from './VideoEmbed';
 const { Meta } = Card;
 
 function showList(items) {
+  console.log(items);
   var listItems = items.map(function(item) {
     var img_src = '';
     var insta_link = '';
